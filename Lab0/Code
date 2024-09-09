@@ -1,3 +1,28 @@
+##All code for Lab0
+
+#code for Jupyter Notebooks in Arc Pro
 import arcpy
 routes = "C:\\Users\\bende287\\Documents\\ArcGIS\\Projects\\GIS5571 -Lab0\\GIS5571 -Lab0.gdb\\State_Aid_Routes_in_Minnesota"
 arcpy.analysis.Buffer(in_features=routes, out_feature_class="State_Aid_Routes_in_M_Buffer4", buffer_distance_or_field="3 MILES")
+
+
+#code for Jupyter Notebooks in AGOL
+from arcgis.gis import GIS
+gis = GIS("home")
+
+# Item Added From Toolbar
+# Title: State_Aid_Routes_in_Minnesota | Type: Feature Service | Owner: bende287_UMN
+item = gis.content.get("98549c1e75cc4d0a984e4b01539cd8ed")
+item
+
+map1 = gis.map('Minnesota')
+map1
+
+map1.add_layer(item)
+map1
+
+from arcgis.features import use_proximity
+
+item_layer1 = item.layers[0]
+item_buffer3 = use_proximity.create_buffers(item_layer1, distances=[3], units = 'Miles', output_name='Buffers around roads')
+item_buffer3

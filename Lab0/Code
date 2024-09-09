@@ -1,0 +1,3 @@
+import arcpy
+routes = "C:\\Users\\bende287\\Documents\\ArcGIS\\Projects\\GIS5571 -Lab0\\GIS5571 -Lab0.gdb\\State_Aid_Routes_in_Minnesota"
+arcpy.analysis.Buffer(in_features=routes, out_feature_class="State_Aid_Routes_in_M_Buffer4", buffer_distance_or_field="3 MILES")

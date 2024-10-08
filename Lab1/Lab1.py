@@ -119,7 +119,6 @@ df_joined = pd.DataFrame.spatial.from_featureclass(r"C:\\Users\\bende287\\Docume
 df_joined.head()
 
 #execute CreateFileGDB and save to given directory
-out_name = "myfgdb.gdb"
-arcpy.CreateFileGDB_management(r"C:\\Users\\bende287\\Documents\\GIS5571", out_name)
+arcpy.CreateFileGDB_management(r"C:\\Users\\bende287\\Documents\\GIS5571", df_joined)
 
 
